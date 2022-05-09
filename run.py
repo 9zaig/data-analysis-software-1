@@ -1,8 +1,6 @@
 # here is the entry point of the program
 # we just create one instance of an object
 
-from src import filter
-from src import extracting
 
 if __name__=="__main__":
     
