@@ -5,7 +5,7 @@ import os
 
 class Filter:
 
-    def __init__(self, path:str):
+    def __init__(self, path:str):ib
         """
         initlization for filtering all the files
 
@@ -24,6 +24,7 @@ class Filter:
         Returns:
             boleen: return True if the file is an xml file
         """
+        # Is it necessary to checking xml file or not?
         if self.file.endswith(".xml"):
             return True
         else:
