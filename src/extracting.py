@@ -67,4 +67,11 @@ class Extract:
 
         return floatWaveLengthList, floatdBList
 
+    #def extracting_information(self):
+
+        #for node in self.root.iter("OIOMeasurement"):
+        #cdate=node.attrib["CreationDate"]
+        #coper=node.attrib["Operator"]
+
+        #return cdate,coper
 
