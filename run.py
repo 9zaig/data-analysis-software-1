@@ -14,6 +14,7 @@ if __name__=="__main__":
     #main of the project
     file = filter.Filter("./dat/D07/20190715_190855/HY202103_D07_(-1,-1)_LION1_DCM_LMZC.xml") 
     # we'll have to find a method to go througth each and every file in each subfolders
+    #How about using globe
 
     #we check if the file is an xml file
     if file.is_xml() == True:
