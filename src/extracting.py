@@ -50,7 +50,7 @@ class Extract:
 
         wavelenghtList = []
         dbList = []
-        for portCombo in self.root.iter('PortCombo'):
+        for portCombo in root.iter('PortCombo'):
             for wavelenght in portCombo.findall('WavelengthSweep'):
                 wavelenghtList.append(wavelenght.find('L').text)
                 dbList.append(wavelenght.find('IL').text)
