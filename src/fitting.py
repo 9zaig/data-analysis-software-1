@@ -42,13 +42,27 @@ class Fitting:
 
         return coef
 
+
     def non_linear_fit(self):
 
         gmodel = Model(handler.func)
-        result = gmodel.fit(self.Y,x=self.X_3,a=1,b=1,c=1,d=1)
+        result = gmodel.fit(self.Y,x=self.X,a=2,b=1,c=1,d=1)
         
         return result.best_fit
 
 
-    def 
-    
+    def flatten_spectrum_fit(self, order:int):
+        """
+        fit for the flatten spectrum because the normal_fit raise an error with the abs()
+
+        Args:
+            order (int): the order of the polynomials 
+
+        Returns:
+            list: list containing the coefficient for the fitting
+        """
+
+        step = np.polyfit(self.X,self.Y,order)
+        coef = np.poly1d(step)
+
+        return coef
