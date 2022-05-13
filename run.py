@@ -5,6 +5,7 @@ from src import filter
 from src import extracting
 from src import fitting
 import numpy as np
+import glob
 
 
 if __name__=="__main__":
@@ -12,7 +13,8 @@ if __name__=="__main__":
 
     
     #main of the project
-    file = filter.Filter("./dat/D07/20190715_190855/HY202103_"+D07+"_"+(-1,-1)+"_LION1_DCM_LMZC.xml")
+
+    input_path = "C:/Users/Csub/PycharmProjects/HY202103/**/**/*LMZ?.xml"
     # we'll have to find a method to go througth each and every file in each subfolders
 
     #we check if the file is an xml file
