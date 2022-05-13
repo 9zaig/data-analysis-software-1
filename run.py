@@ -16,6 +16,7 @@ if __name__=="__main__":
 
     input_path = "C:/Users/Csub/PycharmProjects/HY202103/**/**/*LMZ?.xml"
     # we'll have to find a method to go througth each and every file in each subfolders
+    #How about using globe
 
     #we check if the file is an xml file
     if file.is_xml() == True:
