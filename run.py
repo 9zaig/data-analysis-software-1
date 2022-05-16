@@ -18,6 +18,8 @@ if __name__=="__main__":
     # we'll have to find a method to go througth each and every file in each subfolders
     #How about using globe
 
+    file = filter.Filter(input_path)
+
     #we check if the file is an xml file
     if file.is_xml() == True:
         print("its the right type of file")

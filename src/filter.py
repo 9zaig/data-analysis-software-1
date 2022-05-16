@@ -5,7 +5,7 @@ import os
 
 class Filter:
 
-    def __init__(self, path:str):ib
+    def __init__(self, path:str):
         """
         initlization for filtering all the files
 
