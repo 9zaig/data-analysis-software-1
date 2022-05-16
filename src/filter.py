@@ -17,18 +17,18 @@ class Filter:
         self.SUBSTRING = "LMZ"
 
     
-    # def is_xml(self):
-    #     """
-    #     check if the input file is an xml file
-    #
-    #     Returns:
-    #         boleen: return True if the file is an xml file
-    #     """
-    #     # Is it necessary to checking xml file or not?
-    #     if self.file.endswith(".xml"):
-    #         return True
-    #     else:
-    #         return False
+    def is_xml(self):
+         """
+         check if the input file is an xml file
+    
+         Returns:
+             boleen: return True if the file is an xml file
+         """
+         # Is it necessary to checking xml file or not?
+         if self.file.endswith(".xml"):
+             return True
+         else:
+             return False
 
     def has_LMZC(self):
         """
