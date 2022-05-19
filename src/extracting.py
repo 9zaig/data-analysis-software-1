@@ -67,4 +67,25 @@ class Extract:
 
         return floatWaveLengthList, floatdBList
 
+    def extracting_information(self):
+        """extract the information needed for making the csv
+
+        Returns:
+            cdate: the date of the measure
+            coper: the name of the operator
+            row: a list where the other informations a listed
+        """
+
+        df_cols=["Batch","Wafer","Maskset", "TestSite","Date","Operator", "DieColumn", "DieRow"]
+        row=[]
+        for node in self.root.iter("OIOMeasurement"):
+            cdate=node.attrib["CreationDate"]
+            coper=node.attrib["Operator"]
+
+        for node in self.root.iter("TestSiteInfo"):
+            row.append({"Batch":node.attrib["Batch"],"DieColumn":node.attrib["DieColumn"],"DieRow":node.attrib["DieRow"]
+                   ,"Maskset":node.attrib["Maskset"],"TestSite":node.attrib["TestSite"]
+                   ,"Wafer":node.attrib["Wafer"],"Date":cdate,"Operator":coper})
+
+        return cdate,coper, row
 

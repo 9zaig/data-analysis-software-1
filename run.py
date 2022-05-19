@@ -1,30 +1,27 @@
 # here is the entry point of the program
 # we just create one instance of an object
 
+from src import core
+
 
 if __name__=="__main__":
-    
+
     #main of the project
-    file = filter.Filter("./dat/D07/20190715_190855/HY202103_D07_(-1,-1)_LION1_DCM_LMZC.xml") 
-    # we'll have to find a method to go througth each and every file in each subfolders
 
-    #we check if the file is an xml file
-    if file.is_xml() == True:
-        print("its the right type of file")
+    # Input parameters (this is a shitty idea really wtf is that)
 
-        #we check if the file contain LMZC in his name
-        if file.has_LMZC() == True:
-            print("it got LMZ in his name")
-            #we can work on the file now
+    lot_id = []
+    wafer_id = ['D07','D08']
+    xy_coord = ['(0,0)']
+    device_name = ['LMZ']
+    opt_savefig = True
+    opt_showfig = False
 
-            #we extract the data
-            data = extracting.Extract("./dat/D07/20190715_190855/HY202103_D07_(-1,-1)_LION1_DCM_LMZC.xml")
-            IV = data.get_IV()
-            floatWaveLengthList, floatDBList = data.get_Spectrum()
-            print(IV)
+    run = core.Core(lot_id, wafer_id, xy_coord, device_name, opt_savefig, opt_showfig)
+    run.run_core()
 
-        else:
-            print("it don't have LMZ in his name")
-    else:
-        print('its not an xml file')
+
+
+   
+
     
