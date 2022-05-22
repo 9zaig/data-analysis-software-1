@@ -1,50 +1,51 @@
-# we need to filter all the xml to only those who contain LMZC in their name
-
-from pathlib import Path
 import os
+import glob
+import re
 
-class Filter:
 
-    def __init__(self, path:str):
-        """
-        initlization for filtering all the files
+input_iot = list(map(str, input('lot_id : ').split()))
+if len(input_iot) == 0 :
+    path_iot = []
+    path_iot.append('*')
+elif len(input_iot) != 0 :
+    path_iot = input_iot
 
-        Args:
-            path (str): path of the file we want to check if it is an xml file and had LMZC in the name
-        """
+input_wafer = list(map(str, input('wafer_id : ').split()))
+if len(input_wafer) == 0 :
+    path_wafer = []
+    path_wafer.append('*')
+elif len(input_wafer) != 0 :
+    path_wafer = input_wafer
 
-        self.file = path
-        self.SUBSTRING = "LMZ"
 
-    
-    def is_xml(self):
-         """
-         check if the input file is an xml file
-    
-         Returns:
-             boleen: return True if the file is an xml file
-         """
-         # Is it necessary to checking xml file or not?
-         if self.file.endswith(".xml"):
-             return True
-         else:
-             return False
+f_type = list(map(str, input('device_name : ').split()))
 
-    def has_LMZC(self):
-        """
-        check if the file name contain the substring
 
-        Returns:
-            boleen: return True if the substring is found inside the filename
-        """
+regex = re.compile('{}'.format(f_type) + '.xml')
+result = list()
+for i in path_iot :
+    dir_path1 = 'C:/Users/SAMSUNG/Desktop/' + '{}'.format(i)
+    for j in path_wafer :
+        dir_path2 = dir_path1 + '/{}'.format(j) +  '/**/*.xml'
+        fileList = glob.glob(dir_path2, recursive = True)
+        for f in fileList :
+            file = os.path.realpath(f)
+            if re.search(regex, file) != None :
+                result.append(os.path.realpath(file))
+print(result)
 
-        self.file_name = Path(self.file).stem
+input_xy = list(map(str, input('xy_cord : ').split()))
+print(input_xy)
+final = []
+if len(input_xy) == 0 :
+    final = result
+else :
+    for x in result :
+        for i in range(len(input_xy)) :
+            if '{}'.format(input_xy[i]) in x :
+                final.append(x)
 
-        if self.SUBSTRING in self.file_name:
-            return True
-        else:
-            return False
-
+print(final)
 
 
 
