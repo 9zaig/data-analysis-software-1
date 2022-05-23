@@ -97,11 +97,6 @@ class Core:
                 plt.subplot(2,2,4)
                 plot.flatten_data(floatWaveLengthList,floatDBList)
 
-                # extracting R²
-                IV_1st_part = plot.RSQ(abs(y_1),abs(equation1(x_1)))
-                IV_2nd_part = plot.RSQ(abs(y_2),abs(equation2(x_2)))
-                IV_3rd_part = plot.RSQ(abs(y_3),abs(lm_coef))
-
                 # use the csv.py here
                 cdate, coper, testSiteInfoList = data.extracting_information()
                 
