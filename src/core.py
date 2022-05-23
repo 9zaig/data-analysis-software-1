@@ -1,6 +1,7 @@
 from src import filter
 from src import extracting
 from src import fitting
+from src import toscv
 import numpy as np
 import glob
 
@@ -81,8 +82,8 @@ class Core:
                 # use the plot.py here 
 
                 # use the csv.py here
-                cdate, coper, testSiteInfoList = data.extracting_information()
-                
+                testSiteInfoList = data.extracting_information()
+                csv = toscv.Tocsv(testSiteInfoList)
             else:
                 print("it don't have LMZ in his name")
         else:
