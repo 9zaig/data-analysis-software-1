@@ -17,11 +17,5 @@ if __name__=="__main__":
     opt_savefig = True
     opt_showfig = False
 
-    run = core.Core(lot_id, wafer_id, xy_coord, device_name, opt_savefig, opt_showfig)
+    run = core.Core(lot_id, wafer_id, xy_cord, device_name, opt_savefig, opt_showfig)
     run.run_core()
-
-
-
-   
-
-    

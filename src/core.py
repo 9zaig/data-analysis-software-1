@@ -1,7 +1,9 @@
 from src import filter
 from src import extracting
 from src import fitting
+from src import plot
 import numpy as np
+import matplotlib as plt
 import glob
 
 
@@ -78,7 +80,27 @@ class Core:
                 flatten_spectrum = fitting.Fitting(floatWaveLengthList[6], floatDBList[6])
                 p = flatten_spectrum.flatten_spectrum_fit(3)
 
-                # use the plot.py here 
+                # use plot.py
+                # 1. IV plot
+                plt.subplot(2,2,1)
+                plot.IV_ref_plot(IV[0],IV[1])
+                plot.IV_ployfit_plot(x_1,equation1(x_1))
+                plot.IV_ployfit_plot(x_2,equation2(x_2))
+                plot.IV_lmfit_plot(x_3,lm_coef)
+                # 2. Wavelength(reference) plot
+                plt.subplot(2,2,2)
+                plot.raw_data(floatWaveLengthList,floatDBList)
+                # 3. reference fitting
+                plt.subplot(2,2,3)
+                plot.ref_fit_plot(floatWaveLengthList[6],floatDBList[6],polynome_ref)
+                # 4. flatten spectrum
+                plt.subplot(2,2,4)
+                plot.flatten_data(floatWaveLengthList,floatDBList)
+
+                # extracting R²
+                IV_1st_part = plot.RSQ(abs(y_1),abs(equation1(x_1)))
+                IV_2nd_part = plot.RSQ(abs(y_2),abs(equation2(x_2)))
+                IV_3rd_part = plot.RSQ(abs(y_3),abs(lm_coef))
 
                 # use the csv.py here
                 cdate, coper, testSiteInfoList = data.extracting_information()
