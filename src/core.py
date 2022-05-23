@@ -2,7 +2,7 @@ from src import filter
 from src import extracting
 from src import fitting
 from src import toscv
-from src import plot
+from src import graphplot
 import numpy as np
 import matplotlib as plt
 import glob
@@ -47,7 +47,7 @@ class Core:
                 # We do the fitting here 
                 # we create objects for the reference curve, the IV graph and the flatten spectrum
 
-                # we can now create object to create plots, we can used these coefficient of fitting for the function in the plot.py file
+                # we can now create object to create plots, we can used these coefficient of fitting for the function in the graphplot.py file
                 # I think we can write a better code for the x_1,x_2, etc part
 
 
@@ -81,27 +81,23 @@ class Core:
                 flatten_spectrum = fitting.Fitting(floatWaveLengthList[6], floatDBList[6])
                 p = flatten_spectrum.flatten_spectrum_fit(3)
 
-                # use plot.py
+                # use graphplot.py
+                plotdata = graphplot.Plot(IV[0],IV[1],floatWaveLengthList,floatDBList,polynome_ref)
                 # 1. IV plot
                 plt.subplot(2,2,1)
-                plot.IV_ref_plot(IV[0],IV[1])
-                plot.IV_ployfit_plot(x_1,equation1(x_1))
-                plot.IV_ployfit_plot(x_2,equation2(x_2))
-                plot.IV_lmfit_plot(x_3,lm_coef)
+                plotdata.IV_ref_plot()
+                plotdata.IV_ployfit_plot(x_1,equation1(x_1))
+                plotdata.IV_ployfit_plot(x_2,equation2(x_2))
+                plotdata.IV_lmfit_plot(x_3,lm_coef)
                 # 2. Wavelength(reference) plot
                 plt.subplot(2,2,2)
-                plot.raw_data(floatWaveLengthList,floatDBList)
+                plotdata.raw_data()
                 # 3. reference fitting
                 plt.subplot(2,2,3)
-                plot.ref_fit_plot(floatWaveLengthList[6],floatDBList[6],polynome_ref)
+                plotdata.ref_fit_plot()
                 # 4. flatten spectrum
                 plt.subplot(2,2,4)
-                plot.flatten_data(floatWaveLengthList,floatDBList)
-
-                # extracting R²
-                IV_1st_part = plot.RSQ(abs(y_1),abs(equation1(x_1)))
-                IV_2nd_part = plot.RSQ(abs(y_2),abs(equation2(x_2)))
-                IV_3rd_part = plot.RSQ(abs(y_3),abs(lm_coef))
+                plotdata.flatten_data()
 
                 # use the csv.py here
                 testSiteInfoList = data.extracting_information()
