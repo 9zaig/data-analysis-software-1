@@ -6,3 +6,5 @@ lmfit
 sklearn.metrics
 os
 pathlib.Path
+glob
+re
