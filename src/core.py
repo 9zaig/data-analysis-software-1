@@ -1,6 +1,7 @@
 from src import filter
 from src import extracting
 from src import fitting
+from src import toscv
 from src import plot
 import numpy as np
 import matplotlib as plt
@@ -103,8 +104,8 @@ class Core:
                 IV_3rd_part = plot.RSQ(abs(y_3),abs(lm_coef))
 
                 # use the csv.py here
-                cdate, coper, testSiteInfoList = data.extracting_information()
-                
+                testSiteInfoList = data.extracting_information()
+                csv = toscv.Tocsv(testSiteInfoList)
             else:
                 print("it don't have LMZ in his name")
         else:
