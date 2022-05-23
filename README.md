@@ -1,6 +1,6 @@
 # data-analysis-software
 
-## What is the data analysis software ?
+## 1 - What is the data analysis software ?
 
 the data analysis software is a python based program that take xml files from wafer and automaticly extract the data and save a data analysis graph for each file with differents curve :
 
@@ -11,6 +11,14 @@ the data analysis software is a python based program that take xml files from wa
 - The fitted IV analysis
 
 it also create a dataFrame with data from all the files that we can use to analyse our data.
+
+## 2 - How to install the required library ?
+
+you can install the required the required library by typing in the console the following command 
+```bash
+
+python3 setup.py
+```
 
 ## How to use it ?
 
