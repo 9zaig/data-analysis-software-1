@@ -7,10 +7,14 @@ from lmfit import Model
 import extracting
 
 class Tocsv:
-    def __init__(self):
+    def __init__(self,data):
+        self.data=data
+
 
     def mcsv(self):
 
 
 
-    result.to_csv('.csv')
+
+        result.to_csv('.csv')
+        data.to_csv('result')
