@@ -16,3 +16,7 @@ def Current_value(X,equation):
 def Current_value_lmfit(X,fit):
     current = fit[X]
     return current
+
+def Max_transmission(X,equation,order:int):
+    result = max(equation[order](X))
+    return result
