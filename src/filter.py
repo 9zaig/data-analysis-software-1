@@ -66,5 +66,5 @@ xy_cord = list(map(str, input('xy_cord : ').split()))
 
 f = filter(lot_id, wafer_id, device_name, xy_cord)
 r = f.filter()
-print(r)
+
 
