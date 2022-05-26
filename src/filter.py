@@ -4,7 +4,8 @@ import os
 
 
 class filter:
-    def __init__(self, lot_id, wafer_id, device_name, xy_cord, BASEPATH='C://Users/SAMSUNG/Desktop/'):
+    os.chdir('../dat')
+    def __init__(self, lot_id, wafer_id, device_name, xy_cord, BASEPATH = os.getcwd()):
         self.lot_id = lot_id
         self.wafer_id = wafer_id
         self.device_name = device_name
@@ -52,6 +53,7 @@ class filter:
 # input value is not accepted by filter.py
 lot_id = list(map(str, input('lot_id : ').split()))
 wafer_id = list(map(str, input('wafer_id : ').split()))
+
 while 1 :
     device_name = input('device_name : ')
     if device_name == 'LMZ' :
@@ -64,3 +66,5 @@ xy_cord = list(map(str, input('xy_cord : ').split()))
 
 f = filter(lot_id, wafer_id, device_name, xy_cord)
 r = f.filter()
+print(r)
+
