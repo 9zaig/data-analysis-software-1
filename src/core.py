@@ -1,8 +1,9 @@
 from src import filter
 from src import extracting
 from src import fitting
-from src import toscv
+from src import to_scv
 from src import graphplot
+from src import handler
 import numpy as np
 import matplotlib as plt
 import glob
@@ -100,8 +101,19 @@ class Core:
                 plotdata.flatten_data()
 
                 # use the csv.py here
-                testSiteInfoList = data.extracting_information()
-                csv = toscv.Tocsv(testSiteInfoList)
+                # make list 'data' to use csv.py
+                r2 = handler.r_square(y_1,equation1(y_1))
+                I = handler.Current_value(-1,equation1)
+                I2 = handler.Current_value_lmfit(3,lm_coef)
+                SPC_r2 = handler.r_square(floatDBList,polynome_ref[3](floatDBList))
+                Max_trans = handler.Max_transmission(floatWaveLengthList,polynome_ref,3)
+
+                data = [r2,I,I2,SPC_r2,Max_trans]
+
+                csv = to_scv.Tocsv(data)
+                csv.mpandas()
+
+
             else:
                 print("it don't have LMZ in his name")
         else:
