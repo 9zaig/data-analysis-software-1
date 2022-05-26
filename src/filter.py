@@ -39,10 +39,8 @@ class filter:
         result = list()
         for lot in path_lot:
             dir_path = self.BASEPATH + lot
-            print(dir_path)
             for wafer in path_wafer:
                 file_path = dir_path + '/{}/**/*.xml'.format(wafer)
-                print(file_path)
                 fileList = glob.glob(file_path, recursive=True)
                 for f in fileList:
                     file = os.path.realpath(f)
@@ -54,10 +52,15 @@ class filter:
 # input value is not accepted by filter.py
 lot_id = list(map(str, input('lot_id : ').split()))
 wafer_id = list(map(str, input('wafer_id : ').split()))
-device_name = input('device_name : ')
+while 1 :
+    device_name = input('device_name : ')
+    if device_name == 'LMZ' :
+        break
+    else :
+        print('TRY AGAIN')
+        continue
+
 xy_cord = list(map(str, input('xy_cord : ').split()))
 
 f = filter(lot_id, wafer_id, device_name, xy_cord)
-
 r = f.filter()
-print(f.filter())
