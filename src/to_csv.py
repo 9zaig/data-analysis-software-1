@@ -4,8 +4,7 @@ import matplotlib.pyplot as plt
 import xml.etree.ElementTree as ET
 from sklearn.metrics import r2_score
 from lmfit import Model
-from extracting import Extract
-
+from src import extracting
 class Tocsv:
     def __init__(self,data):
         self.data=data

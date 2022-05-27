@@ -30,9 +30,11 @@ class filter:
         return path
 
     def filter(self):
+       
         path_lot = self.process_path(self.lot_id)
         path_wafer = self.process_path(self.wafer_id)
         if len(self.device_name) != 0:
+            
             if len(self.device_name[0]) == 3:
                 regex = re.compile('{}\\w.xml'.format(self.device_name[0]))
             elif len(self.device_name[0]) == 0:
@@ -47,10 +49,13 @@ class filter:
             dir_path = self.BASEPATH + "\\{}".format(lot)
             for wafer in path_wafer:
                 file_path = dir_path + '\\{}\\**\\*.xml'.format(wafer)
+                #print(file_path)
                 fileList = glob.glob(file_path, recursive=True)
                 for f in fileList:
                     file = os.path.realpath(f)
+                    #print('aa')
                     if re.search(regex, file) != None:
+                        #print('cc')
                         result.append(os.path.realpath(file))
 
         return self.find_xy_cord(result, self.xy_cord)
