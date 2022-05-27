@@ -102,7 +102,6 @@ class Plot:
         plt.suptitle(f'{filename}')
         # we look if we have to show the figure and if we have to save it
         if self.opt_savefig == True:
-            print()
             plt.savefig(f'./../res/jpgs/{filename}')
         elif self.opt_showfig == True:
             plt.show()
