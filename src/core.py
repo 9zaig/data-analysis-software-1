@@ -28,6 +28,7 @@ class Core:
         file_list = filtering.filter()
         print(len(file_list))
         #i = 0
+        df_list = []
         for elem in file_list:
 
             filename = elem.split('\\')
@@ -39,6 +40,7 @@ class Core:
             data = extracting.Extract(elem)
             IV = data.get_IV()
             floatWaveLengthList, floatDBList = data.get_Spectrum()
+            information_data = data.extracting_information()
             #print(f'number of the file : {i}, IV data : {IV}')
             #i+=1
 
@@ -61,6 +63,7 @@ class Core:
             eq1 = fitting.Fitting(x_1, abs(y_1)) 
             equation1 = eq1.normal_fit(4)
             fittedX_1 = equation1(x_1)
+            fittedY_1 = equation1(y_1)
 
             #fitting coefficient for the 2nd part
             eq2 = fitting.Fitting(x_2, abs(y_2))
@@ -81,20 +84,23 @@ class Core:
 
             plotdata = graphplot.Plot(IV[0],IV[1],floatWaveLengthList,floatDBList,polynome_ref, self.opt_showfig, self.opt_savefig)
             plotdata.data_analysis_plot(x_1, x_2, x_3, fittedX_1, fittedX_2, lm_coef ,filename)
-        """
 
-                # use the csv.py here
-                # make list 'data' to use csv.py
-                r2 = handler.r_square(y_1,equation1(y_1))
-                I = handler.Current_value(-1,equation1)
-                I2 = handler.Current_value_lmfit(3,lm_coef)
-                SPC_r2 = handler.r_square(floatDBList,polynome_ref[3](floatDBList))
-                Max_trans = handler.Max_transmission(floatWaveLengthList,polynome_ref,3)
+            ######################################################
+            # Making the csv
+            ######################################################
 
-                data = [r2,I,I2,SPC_r2,Max_trans]
+            r2 = handler.r_square(y_1, fittedY_1)
+            I = handler.Current_value(-1, equation1)
+            I2 = handler.Current_value_lmfit(3, lm_coef)
+            SPC_r2 = handler.r_square(floatDBList[6],polynome_ref[3](floatDBList[6]))
+            Max_trans = handler.Max_transmission(floatWaveLengthList[6],polynome_ref,3)
 
-                csv = to_scv.Tocsv(data)
-                csv.mpandas()
-
-        """
+            data = [r2,I,I2,SPC_r2,Max_trans]
+            csv = to_csv.Tocsv(data, information_data)
+            df = csv.mpandas()
+            df_list.append(df)
         
+        #print(df_list)
+        final_df = handler.final_csv(df_list)
+        #print(final_df)
+        handler.making_csv(final_df)
