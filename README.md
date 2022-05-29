@@ -32,6 +32,11 @@ You can install the required the required library by typing in the console the f
 python3 setup.py
 ```
 
+you can also install it like that 
+```bash
+install -r requirements.txt
+```
+
 ## 3. How to use it ?
 
 User can directly change the parameters in the run.py file to acces more efficiently what he want. He can change the following parameters : 
@@ -54,11 +59,11 @@ User can directly change the parameters in the run.py file to acces more efficie
 
 ### filter.py
 
-- 
+- filter the files with the given parameters like wafer_id or xy_coord to go through only the files that have those parameters
 
 ### fitting.py
 
-- Fitting data
+- Fitting the data
 
 ### graphplot.py
 
@@ -66,9 +71,11 @@ User can directly change the parameters in the run.py file to acces more efficie
 
 ### handler.py
 
-### tocsv.py
+- file for more practical function like mathemitcal function using numpy
 
-- Convert data in matrix form to csv 
+### to_csv.py
+
+- Convert data into a dataframe  
  
  ## Author
 
