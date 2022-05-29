@@ -83,9 +83,9 @@ class Extract:
             operator = node.attrib["Operator"]
 
         for node in self.root.iter("TestSiteInfo"):
-            row.append({"Date":date,"Operator":operator ,"Batch":node.attrib["Batch"],"DieColumn":node.attrib["DieColumn"],"DieRow":node.attrib["DieRow"]
-                   ,"Maskset":node.attrib["Maskset"],"TestSite":node.attrib["TestSite"]
-                   ,"Wafer":node.attrib["Wafer"]})
+            row.append({"Date": date, "Operator": operator, "Batch": node.attrib["Batch"], "DieColumn": node.attrib["DieColumn"],"DieRow": node.attrib["DieRow"]
+                , "Maskset": node.attrib["Maskset"], "TestSite": node.attrib["TestSite"]
+                , "Wafer": node.attrib["Wafer"]})
 
         print(row)
 
