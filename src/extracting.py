@@ -79,13 +79,15 @@ class Extract:
         df_cols=["Batch","Wafer","Maskset", "TestSite","Date","Operator", "DieColumn", "DieRow"]
         row=[]
         for node in self.root.iter("OIOMeasurement"):
-            row.append({"Date":node.attrib["CreationDate"]})
-            row.append({"Operator": node.attrib["Operator"]})
+            date = node.attrib["CreationDate"]
+            operator = node.attrib["Operator"]
 
         for node in self.root.iter("TestSiteInfo"):
-            row.append({"Batch":node.attrib["Batch"],"DieColumn":node.attrib["DieColumn"],"DieRow":node.attrib["DieRow"]
-                   ,"Maskset":node.attrib["Maskset"],"TestSite":node.attrib["TestSite"]
-                   ,"Wafer":node.attrib["Wafer"]})
+            row.append({"Date": date, "Operator": operator, "Batch": node.attrib["Batch"], "DieColumn": node.attrib["DieColumn"],"DieRow": node.attrib["DieRow"]
+                , "Maskset": node.attrib["Maskset"], "TestSite": node.attrib["TestSite"]
+                , "Wafer": node.attrib["Wafer"]})
+
+        print(row)
 
         return row
 
