@@ -87,7 +87,7 @@ class Extract:
                 , "Maskset": node.attrib["Maskset"], "TestSite": node.attrib["TestSite"]
                 , "Wafer": node.attrib["Wafer"]})
 
-        print(row)
+        #print(row)
 
         return row
 
