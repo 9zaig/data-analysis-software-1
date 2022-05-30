@@ -6,3 +6,8 @@ D07/
 D08/
 D23/
 D24/
+
+#ignore the result folder
+
+csv/
+jpgs/
