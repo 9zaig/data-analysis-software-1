@@ -11,10 +11,10 @@ if __name__=="__main__":
     # Input parameters (this is a shitty idea really wtf is that)
 
     lot_id = []
-    wafer_id = []
+    wafer_id = ['D07','D08']
     xy_cord = []
     device_name = ['LMZ']
-    opt_savefig = False
+    opt_savefig = True
     opt_showfig = False
 
     run = core.Core(lot_id, wafer_id, xy_cord, device_name, opt_savefig, opt_showfig)
