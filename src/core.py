@@ -5,6 +5,7 @@ from src import to_csv
 from src import graphplot
 from src import handler
 import numpy as np
+import time
 
 
 
@@ -19,7 +20,7 @@ class Core:
         self.opt_showfig = opt_showfig
 
     def run_core(self):
-
+        start=time.time()
        
         # we'll have to find a method to go througth each and every file in each subfolders
         #How about using globe
@@ -104,3 +105,5 @@ class Core:
         final_df = handler.final_csv(df_list)
         #print(final_df)
         handler.making_csv(final_df)
+        s=time.time()-start
+        print(f"time : {s}")
