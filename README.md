@@ -59,7 +59,7 @@ User can directly change the parameters in the run.py file to acces more efficie
 
 ### filter.py
 
-- filter the files with the given parameters like wafer_id or xy_coord to go through only the files that have those parameters
+- Filter the files with the given parameters like wafer_id or xy_coord to go through only the files that have those parameters
 
 ### fitting.py
 
@@ -71,7 +71,7 @@ User can directly change the parameters in the run.py file to acces more efficie
 
 ### handler.py
 
-- file for more practical function like mathemitcal function using numpy
+- File for more practical function like mathemitcal function using numpy
 
 ### to_csv.py
 
