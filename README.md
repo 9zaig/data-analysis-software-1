@@ -53,13 +53,13 @@ User can directly change the parameters in the run.py file to acces more efficie
 
 ### extracting.py
 
--Getting data for graph from xml file 
+- Getting data for graph from xml file 
 
--Use xml.etree.ElementTree 
+- Use xml.etree.ElementTree 
 
 ### filter.py
 
-- filter the files with the given parameters like wafer_id or xy_coord to go through only the files that have those parameters
+- Filter the files with the given parameters like wafer_id or xy_coord to go through only the files that have those parameters
 
 ### fitting.py
 
@@ -71,12 +71,17 @@ User can directly change the parameters in the run.py file to acces more efficie
 
 ### handler.py
 
-- file for more practical function like mathemitcal function using numpy
+- File for more practical function like mathemitcal function using numpy
 
 ### to_csv.py
 
 - Convert data into a dataframe  
  
  ## Author
-
- 김태인 , 최수빈 , 신용진 , Maël Jaouen
+ Maël Jaouen mael.jaouen@isen-ouest.yncrea.fr
+ 
+ 김태인 tikim1201@hanyang.ac.kr
+ 
+ 최수빈 dday323@hanyang.ac.kr
+ 
+ 신용진 tikim1201@hanyang.ac.kr

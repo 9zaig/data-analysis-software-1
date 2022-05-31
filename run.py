@@ -11,7 +11,7 @@ if __name__=="__main__":
     # Input parameters (this is a shitty idea really wtf is that)
 
     lot_id = []
-    wafer_id = ['D07','D08']
+    wafer_id = ['D07','D08','D23','D24']
     xy_cord = []
     device_name = ['LMZ']
     opt_savefig = True
