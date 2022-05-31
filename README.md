@@ -53,9 +53,9 @@ User can directly change the parameters in the run.py file to acces more efficie
 
 ### extracting.py
 
--Getting data for graph from xml file 
+- Getting data for graph from xml file 
 
--Use xml.etree.ElementTree 
+- Use xml.etree.ElementTree 
 
 ### filter.py
 
@@ -78,5 +78,10 @@ User can directly change the parameters in the run.py file to acces more efficie
 - Convert data into a dataframe  
  
  ## Author
-
- 김태인 , 최수빈 , 신용진 , Maël Jaouen
+ Maël Jaouen mael.jaouen@isen-ouest.yncrea.fr
+ 
+ 김태인 tikim1201@hanyang.ac.kr
+ 
+ 최수빈 dday323@hanyang.ac.kr
+ 
+ 신용진 tikim1201@hanyang.ac.kr
