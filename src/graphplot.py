@@ -13,16 +13,7 @@ class Plot:
         self.opt_savefig = opt_savefig
 
     def IV_ref_plot(self):
-        plt.plot(self.
-
-
-
-
-
-
-
-
-                 +IV_X, abs(self.IV_Y), 'bo--', label='Raw data')
+        plt.plot(self.IV_X, abs(self.IV_Y), 'bo--', label='Raw data')
         plt.xlabel('Voltage [V]')
         plt.ylabel('Current [A]')
         plt.xticks(np.arange(-2, 1.25, 0.25))
