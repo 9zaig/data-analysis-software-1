@@ -53,7 +53,7 @@ class Plot:
         plt.xlabel('wavelenght [nm]')
         plt.ylabel('Measured transmission[dB]')
         plt.title('Transmission spectra - As mesured')
-        plt.axis([1527, 1583, -65, 0])
+        # plt.axis([1527, 1583, -65, 0])
         plt.legend(loc='best')
 
     def ref_fit_plot(self):
@@ -68,7 +68,7 @@ class Plot:
         plt.xlabel('wavelenght [nm]')
         plt.ylabel('Measured transmission[dB]')
         plt.title('Transmission spectra - As mesured')
-        plt.axis([1527, 1583, -65, 0])
+        # plt.axis([1527, 1583, -65, 0])
         plt.legend(loc='best')
 
     def flatten_data(self):
@@ -79,7 +79,7 @@ class Plot:
         plt.xlabel('wavelenght [nm]')
         plt.ylabel('Measured transmission[dB]')
         plt.title('flatten Transmission spectra - as measured')
-        plt.axis([1527, 1583, -65, 5])
+        # plt.axis([1527, 1583, -65, 5])
 
     # Data analysis
     def data_analysis_plot(self,x_1, x_2, x_3, fittedX_1, fittedX_2, lm_coef, filename):        

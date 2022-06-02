@@ -63,11 +63,12 @@ User can directly change the parameters in the run.py file to acces more efficie
 
 ### fitting.py
 
-- Fitting the data
+- Fitting data like IV or the reference curve
+- Return coefficients for the fitting
 
 ### graphplot.py
 
-- Drawing Graph
+- Making plots like data analysis graph and save it inside a given folder  
 
 ### handler.py
 
@@ -84,4 +85,4 @@ User can directly change the parameters in the run.py file to acces more efficie
  
  최수빈 dday323@hanyang.ac.kr
  
- 신용진 tikim1201@hanyang.ac.kr
+ 신용진 djfm98@hanyang.ac.kr
