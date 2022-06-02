@@ -4,6 +4,7 @@ from src import fitting
 from src import to_csv
 from src import graphplot
 from src import handler
+from sklearn.metrics import r2_score
 import numpy as np
 import time
 
@@ -93,7 +94,7 @@ class Core:
             r2 = handler.r_square(y_1, fittedY_1)
             I = handler.Current_value(-1, equation1)
             I2 = handler.Current_value_lmfit(3, lm_coef)
-            SPC_r2 = handler.r_square(floatDBList[6],polynome_ref[3](floatDBList[6]))
+            SPC_r2 = r2_score(floatDBList[6],polynome_ref[4](floatWaveLengthList[6]))
             Max_trans = handler.Max_transmission(floatWaveLengthList[6],polynome_ref,3)
 
             data = [r2,I,I2,SPC_r2,Max_trans]
