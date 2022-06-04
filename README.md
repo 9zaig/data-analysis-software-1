@@ -84,4 +84,4 @@ User can directly change the parameters in the run.py file to acces more efficie
  
  최수빈 dday323@hanyang.ac.kr
  
- 신용진 tikim1201@hanyang.ac.kr
+ 신용진 djrm98@hanyang.ac.kr
