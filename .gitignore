@@ -2,12 +2,7 @@
 *.xlm
 
 #ignore the dat folder
-D07/
-D08/
-D23/
-D24/
+HY202103/
 
-#ignore the result folder
-
-csv/
-jpgs/
+#ignore the results
+*.keep
