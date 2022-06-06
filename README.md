@@ -50,24 +50,29 @@ User can directly change the parameters in the run.py file to acces more efficie
 
 ## 4. How does it work ? 
 ### core.py
+- The core of our program
+- Calling all the other module
 
 ### extracting.py
 
-- Getting data for graph from xml file 
+- Extracting data from XML file 
 
 - Use xml.etree.ElementTree 
 
 ### filter.py
 
-- Filter the files with the given parameters like wafer_id or xy_coord to go through only the files that have those parameters
+- Filtering file given in the input
+- Returns a list of path for files that make it through the filters 
 
 ### fitting.py
 
 - Fitting the data
+- Returns coefficients for the fitting
 
 ### graphplot.py
 
 - Drawing Graph
+- Save result in a given folder 
 
 ### handler.py
 
