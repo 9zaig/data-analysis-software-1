@@ -72,7 +72,7 @@ class Extract:
 
         Returns:
             cdate: the date of the measure
-            coper: the name of the operator
+            coper: the name of addthe operator
             row: a list where the other informations a listed
         """
 
